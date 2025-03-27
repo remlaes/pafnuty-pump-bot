@@ -6,7 +6,7 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, Messa
 from keep_alive import keep_alive
 import os
 
-BOT_TOKEN = os.getenv("BOT_TOKEN")
+BOT_TOKEN = os.getenv("7906649563:AAFWaoUAHjYtd1Bcw0UWX0FDgIJ3vOMZOKk")
 print("🔑 BOT_TOKEN =", BOT_TOKEN)
 
 
