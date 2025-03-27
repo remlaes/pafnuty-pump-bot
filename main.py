@@ -74,4 +74,5 @@ async def main():
 
 if __name__ == "__main__":
     import asyncio
+    keep_alive()
     asyncio.run(main())
