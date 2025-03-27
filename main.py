@@ -64,6 +64,8 @@ async def top(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text("\u26a0\ufe0f Failed to get data from OKX.")
         
 async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    
+    print("💬 Получено сообщение:", update.message.text)
     text = update.message.text.lower()
 
     if "привет" in text:
