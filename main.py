@@ -2,7 +2,7 @@
 import logging
 import requests
 from telegram import Update
-from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, MessageHandler, filters
 from keep_alive import keep_alive
 import os
 
@@ -61,6 +61,21 @@ async def top(update: Update, context: ContextTypes.DEFAULT_TYPE):
         await update.message.reply_text(msg, parse_mode="Markdown")
     else:
         await update.message.reply_text("\u26a0\ufe0f Failed to get data from OKX.")
+        
+async def handle_text(update: Update, context: ContextTypes.DEFAULT_TYPE):
+    text = update.message.text.lower()
+
+    if "привет" in text:
+        await update.message.reply_text("Привет, Пафнутий! 🔥 Я уже в сети.")
+    elif "как дела" in text:
+        await update.message.reply_text("Я готов к пампам! А у тебя как?")
+    elif "что ты умеешь" in text:
+        await update.message.reply_text("Я могу показывать топ токены с OKX. Напиши /top 😉")
+    elif "токены" in text or "покажи" in text:
+        await update.message.reply_text("Топ токены здесь: /top")
+    else:
+        await update.message.reply_text("Я пока не умею отвечать на это, но скоро научусь 😅")
+
 
 async def start(update: Update, context: ContextTypes.DEFAULT_TYPE):
     await update.message.reply_text("Hi Pafnuтий! Send /top to get trending tokens from OKX.")
@@ -69,6 +84,7 @@ async def main():
     app = ApplicationBuilder().token(BOT_TOKEN).build()
     app.add_handler(CommandHandler("start", start))
     app.add_handler(CommandHandler("top", top))
+    app.add_handler(MessageHandler(filters.TEXT & ~filters.COMMAND, handle_text))
     print("\u2705 Bot is running on Replit. Waiting for /top...")
     await app.run_polling()
 
