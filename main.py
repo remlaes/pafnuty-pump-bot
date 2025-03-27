@@ -6,7 +6,8 @@ from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes, Messa
 from keep_alive import keep_alive
 import os
 
-BOT_TOKEN = os.getenv("7906649563:AAFWaoUAHjYtd1Bcw0UWX0FDgIJ3vOMZOKk")
+BOT_TOKEN = os.getenv("BOT_TOKEN")
+
 
 logging.basicConfig(
     format='%(asctime)s - %(name)s - %(levelname)s - %(message)s',
