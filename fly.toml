@@ -1,9 +1,0 @@
-app = "pafnuty-pump"  # замени на своё имя приложения
-
-primary_region = "fra"
-
-[build]
-  dockerfile = "Dockerfile"
-
-[env]
-  BOT_TOKEN = "ЗАМЕНИ_НА_СВОЙ_ТОКЕН_ИЛИ_УДАЛИ_ЕСЛИ_ЗАДАЕШЬ_ЧЕРЕЗ_ИНТЕРФЕЙС"
