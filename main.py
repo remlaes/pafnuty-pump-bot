@@ -3,6 +3,7 @@ import logging
 import requests
 from telegram import Update
 from telegram.ext import ApplicationBuilder, CommandHandler, ContextTypes
+from keep_alive import keep_alive
 import os
 
 BOT_TOKEN = os.getenv("7906649563:AAFWaoUAHjYtd1Bcw0UWX0FDgIJ3vOMZOKk")
