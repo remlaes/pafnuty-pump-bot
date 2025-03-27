@@ -7,6 +7,8 @@ from keep_alive import keep_alive
 import os
 
 BOT_TOKEN = os.getenv("BOT_TOKEN")
+print("🔑 BOT_TOKEN =", BOT_TOKEN)
+
 
 
 logging.basicConfig(
